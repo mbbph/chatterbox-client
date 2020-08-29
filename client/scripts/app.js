@@ -9,7 +9,7 @@ var App = {
 
     FormView.initialize();
     RoomsView.initialize();
-    MessagesView.initialize();
+    // MessagesView.initialize();
 
     // Fetch initial batch of messages
     App.startSpinner();
@@ -20,16 +20,12 @@ var App = {
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
       // examine the response from the server request:
-      let htmlMessage = '';
-      console.log(Array.isArray(data));
-      for (var m in data) {
-        console.log(typeof data[m]);
-        //let ourMessage = MessageView.render(data[m]);
-        //htmlMessage += ourMessage;
-      }
-      //console.log(htmlMessage);
-      //var newChats = $('<div>' + htmlMessage + '</div>');
-      //$('#chats').append(newChats);
+      //let htmlMessage = '';
+      //console.log('data:', data);
+      //console.log('is the value of the results key an array?', Array.isArray(data.results));
+      //console.log('is data array?', Array.isArray(data));
+      data = data.results;
+      MessagesView.initialize(data);
 
       callback();
     });
@@ -45,3 +41,20 @@ var App = {
     FormView.setStatus(false);
   }
 };
+
+// console.log('data:', data);
+// for (let i = 0; i < data.length; i++) {
+//   console.log(data[i]);
+
+//   if (data[i]['username'] === undefined || data[i]['text'] === undefined || data[i]['roomname'] === undefined) {
+//     continue;
+//   }
+
+//   let ourMessage = MessageView.render(data[i]);
+//   htmlMessage += ourMessage;
+// }
+// //console.log(htmlMessage);
+// var newChats = $('<div>' + htmlMessage + '</div>');
+// $('#chats').append(newChats);
+
+// callback();
