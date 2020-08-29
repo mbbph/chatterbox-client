@@ -116,7 +116,9 @@ describe('chatterbox', function() {
 
       App.initialize();
       $('#message').val('Why so many Mel Brooks quotes?');
+      //console.log('our message', $('#message').val());
       $('form .submit').trigger('submit');
+      console.log(Parse.create.called); //false
       expect(Parse.create.called).to.be.true;
 
       Parse.create.restore();

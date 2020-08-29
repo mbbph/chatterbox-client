@@ -8,12 +8,8 @@ var Messages = {
 
     Parse.create(message);
     $('#message').val('');
+
+    App.startSpinner();
+    App.fetch(App.stopSpinner);
   }
-
 };
-
-// var message = {
-//   username: 'shawndrost',
-//   text: 'trololo',
-//   roomname: '4chan'
-// };

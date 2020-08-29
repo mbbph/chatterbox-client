@@ -12,8 +12,10 @@ var App = {
     // MessagesView.initialize();
 
     // Fetch initial batch of messages
-    App.startSpinner();
-    App.fetch(App.stopSpinner);
+    setInterval(function() {
+      App.startSpinner();
+      App.fetch(App.stopSpinner);
+    }, 3000);
 
   },
 
