@@ -19,11 +19,7 @@ var App = {
 
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
-      // examine the response from the server request:
-      //let htmlMessage = '';
-      //console.log('data:', data);
-      //console.log('is the value of the results key an array?', Array.isArray(data.results));
-      //console.log('is data array?', Array.isArray(data));
+
       data = data.results;
       MessagesView.initialize(data);
 
