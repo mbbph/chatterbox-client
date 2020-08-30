@@ -27,8 +27,11 @@
       <div class="spinner"><img src="client/images/spiffygif_46x46.gif"></div>
       <div id="rooms">
         Room:
-        <select></select>
-        <button>Add Room</button>
+        <select name='roomselect' id="roomselect">
+          <option value="" disabled selected hidden>Choose Room...</option>
+        </select>
+        <input type="text" name="newroom" id="newroom"/>
+        <button id="add-rooms" onclick = "Rooms.add($('#newroom').val())">Add Room</button>
       </div>
       <form action="#" id="send" method="post">
         <input type="text" name="message" id="message"/>

@@ -3,7 +3,7 @@ var Messages = {
     var message = {
       username: App.username,
       text: $('#message').val(),
-      roomname: 'lobby'
+      roomname: Rooms.room
     };
 
     Parse.create(message);
