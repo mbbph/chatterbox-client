@@ -7,7 +7,7 @@ var FormView = {
   },
 
   handleSubmit: function(event) {
-    // Stop the browser from submitting the form
+    // Stop the browser from submitting the for
     event.preventDefault();
 
     Messages.submit();
